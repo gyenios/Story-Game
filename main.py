@@ -53,3 +53,11 @@ def login():
             print('Wrong username or password')
             tries += 1
     print('Too many wrong entries')
+
+class play_game:
+    def __init__(self,user='Guest',checkpoint='0'):
+        self.user = user
+        self.checkpoint = checkpoint
+
+    def load_data(self):
+        pass
