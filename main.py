@@ -61,3 +61,31 @@ class play_game:
 
     def load_data(self):
         pass
+
+def main_menu():
+    print('''
+                RISE OF AN EMPIRE  -  STORY GAME
+                    [1] Log into profile
+                    [2] Create new profile
+                    [3] Play as guest
+                    [4] Exit
+             ''')
+        option = int(input('Option >>  '))
+        while True:
+            try:
+                if option == 1: # Old profile login
+                    logged,checkpoint = login()
+                    if logged == True:
+                        user = play_game(user,checkpoint)
+                        user.load_data()
+                elif option == 2: # New profile login
+                    
+                elif option == 3: # Guest login
+                    user = play_game()
+                    user.load_data()
+                elif option == 4: # Exit
+                    break
+                else: # Any other integer entry
+                    print('Options can be 1,2,3,or 4 only')
+            except Exception as e: # Exception handling
+                print('An error occured: ', e)
