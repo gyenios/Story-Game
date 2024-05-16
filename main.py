@@ -37,7 +37,7 @@ def login():
                 else:
                     return [False,'X']
     # Profile details entry and authentication       
-    tries = 0
+    tries,n = 0,3
     while tries < 3:
 
         # Taking profile details (username and key)
@@ -50,10 +50,9 @@ def login():
             print(f'Welcome back {user}')
             break
         else:
-            print('Wrong username or password')
+            print(f'Wrong username or password, program will close in {n-1} tries')
             tries += 1
-    print('Too many wrong entries')
-
+    return [user,checkpoint]
 class play_game:
     def __init__(self,user='Guest',checkpoint='0'):
         self.user = user
@@ -74,12 +73,12 @@ def main_menu():
         while True:
             try:
                 if option == 1: # Old profile login
-                    logged,checkpoint = login()
-                    if logged == True:
+                    user,checkpoint = login()
+                    # if logged == True:
                         user = play_game(user,checkpoint)
                         user.load_data()
                 elif option == 2: # New profile login
-                    
+                   new_user() 
                 elif option == 3: # Guest login
                     user = play_game()
                     user.load_data()
