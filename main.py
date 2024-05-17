@@ -59,7 +59,7 @@ class play_game:
         self.checkpoint = checkpoint
 
     def load_data(self):
-        pass
+        print('Game completed')
 
 def main_menu():
     print('''
