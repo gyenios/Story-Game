@@ -14,7 +14,7 @@ def new_user():
                     for row in reader:
                         if row['User'] == user:
                             if row['Key'] == key:
-                                print('This profile already exits')
+                                print('This profile already exits, try logging in again')
                             else:
                                 # writer.append([user,key,checkpoint])  Check for right syntax
                                 print('Account successfully created')
